@@ -216,6 +216,8 @@ func NewTypedUnmanaged[request comparable](name string, options TypedOptions[req
 		options.MaxConcurrentReconciles = 1
 	}
 
+	options.CacheSyncTimeout = 10 * time.Minute
+	
 	if options.CacheSyncTimeout == 0 {
 		options.CacheSyncTimeout = 2 * time.Minute
 	}

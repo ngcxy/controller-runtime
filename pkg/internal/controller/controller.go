@@ -183,7 +183,7 @@ func (c *Controller[request]) Start(ctx context.Context) error {
 			return err
 		}
 
-		c.LogConstructor(nil).Info("Starting Controller")
+		c.LogConstructor(nil).Info("aaacxy Starting Controller")
 
 		// All the watches have been started, we can reset the local slice.
 		//
@@ -255,7 +255,7 @@ func (c *Controller[request]) startEventSources(ctx context.Context) error {
 				didStartSyncingSource.Store(true)
 				if err := syncingSource.WaitForSync(sourceStartCtx); err != nil {
 					err := fmt.Errorf("failed to wait for %s caches to sync %v: %w", c.Name, syncingSource, err)
-					log.Error(err, "Could not wait for Cache to sync")
+					log.Error(err, "aaacxy Could not wait for Cache to sync")
 					sourceStartErrChan <- err
 				}
 			}()
